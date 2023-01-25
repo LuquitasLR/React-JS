@@ -1,0 +1,14 @@
+.cart-widget {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    height: 50px;
+    min-height: 50px;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    background-color: rgb(58, 127, 255);
+    border-radius: 10px;
+  
+  }

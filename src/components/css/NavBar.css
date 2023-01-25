@@ -1,0 +1,44 @@
+  /*Header*/
+  header {
+    padding: 0.5vh;
+  display: flex;
+flex-direction: row;
+justify-content: space-between;}
+.logo img {
+  width: 180px;
+}
+    header nav {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between; }
+      header nav a:hover img {
+        transform: scale(1.1); }
+      header nav ul {
+        display: flex;
+        flex-wrap: wrap; }
+        header nav ul li a {
+          color: white;
+          font-family: 'montserrat', sans-serif;
+          font-weight: 600;
+          font-size: 25px;
+          margin-inline: 1vh;
+          transition: all 0.2s; }
+          header nav ul li a:hover {
+            color: rgb(58, 127, 255); }
+  
+            /* Media Queries Header */
+  @media (max-width: 1200px) {
+    header nav ul li {
+  font-size: 16px; } }
+  
+  @media (max-width: 720px) {
+   header nav {
+   display: flex;
+   
+   flex-direction: column; }
+  header nav ul {
+   width: 100%;
+  justify-content: space-around; } 
+  }
