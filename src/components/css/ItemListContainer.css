@@ -1,0 +1,14 @@
+#lista {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+h2 {
+    margin: 20px 0 5px 0;  
+}
+.showClick{
+    height: 0;
+    
+}

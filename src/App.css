@@ -24,7 +24,11 @@ a, a:hover {
 
 
 ul {
-  list-style: none; }
+  list-style: none;
+  color: white;
+  font-family: 'montserrat', sans-serif;
+  font-size: 15px;
+font-weight: 600; }
 
 button, input, textarea, select {
   font: inherit; }
