@@ -5,7 +5,7 @@ const ItemListContainer =({greeting}) => {
     return(
         <>
         <section id='lista'>
-            <h2 ><a href='javascript:desplegar()'>{greeting}</a></h2>
+            <h2 ><a>{greeting}</a></h2>
             <ul>
                 <li><a href=''>Procesadores</a></li>
                 <li><a href=''>AMD</a></li>

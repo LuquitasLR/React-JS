@@ -1,0 +1,50 @@
+.card {
+    grid-area: product;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(40, 40, 40);
+    border-radius: 10px;
+    align-items: center;
+    justify-items: center;
+    padding: 15px;
+  }
+  .textCard{
+    margin: 10px;
+    color: white;
+    font-family: 'montserrat', sans-serif;
+    font-size: px;
+    align-self: start; 
+}
+
+.img {
+    border-radius: 10px;
+    width: 180px;
+    margin: 10px;
+}
+.button {
+    display: flex;
+    padding: 10px;
+    border: 5px;
+    border-radius: 5px;
+    background-color: #2a7ec4;
+    opacity: 0.8;
+    font-size: 20px;
+    font-weight: 600;
+    width: 190px;
+    transition: 0.1s; 
+}
+
+div.button:hover{
+    opacity: 1;
+    transform: scale(1.05); 
+}
+
+.productBox {
+    font-size: 20px;
+    color: white;
+    font-weight: 300;
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+    align-items: center; 
+    }

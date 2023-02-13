@@ -1,14 +1,22 @@
 #lista {
+    grid-area: category;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    font-size: 25px;
+    background-color: black;
+    
 }
 h2 {
     margin: 20px 0 5px 0;  
+    font-size: 30px;
 }
 .showClick{
     height: 0;
     
+}
+li  {
+    font-size: 20px;
 }

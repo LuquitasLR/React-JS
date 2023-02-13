@@ -202,3 +202,11 @@ p {
   border-radius: 10px;
 
 }
+
+#grid {
+  display: grid;
+  grid-template-areas: "category product product";
+  grid-template-columns: 2fr 3fr;
+  justify-items: stretch;
+  align-items: start;
+  overflow: hidden; }

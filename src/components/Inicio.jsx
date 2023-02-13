@@ -17,8 +17,8 @@ return (
     <div>
         <h3>{buy}</h3>
     </div>
-    <button className="button"><h4>Iniciar carrito</h4></button>
 </div>
+    
 
 )
 

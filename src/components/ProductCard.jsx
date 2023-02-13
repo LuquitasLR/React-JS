@@ -1,15 +1,16 @@
+import "./css/ProductCard.css"
 
-
-export function ProductCard (id,name,urlImg) {
+export default function ProductCard (product) {
     return (
 
-        <div>
-            <ul>
-                <h5>{name}</h5>
-                <img src={urlImg} alt="img" />
-                <h6>{id}</h6>
+        <ul className="card textCard productBox">
+            
+                <h4>{product.name}</h4>
+                <img className="img" src={product.img} alt="img" />
+                <h4>$ {product.price}</h4>
+                <div className="button "><a href="">Agregar al carrito</a></div>
             </ul>
-        </div>
+
 
 
     )
