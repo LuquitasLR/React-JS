@@ -3,20 +3,30 @@ import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
 import Inicio from './components/Inicio';
 import ProductsList from './components/ProductList.jsx';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ProductsFilter from './components/ProductFilter.jsx';
 
 
 function App () {
 
     return (
-        <>
+        <div>
+        <BrowserRouter>
         <NavBar/>
         <Inicio title="Bienvenido a Moon Light" intro="Somos la tienda gaming mas grande de Argentina" buy="Compra lo que necesitas y te lo llevamos a la puerta de tu casa"/>
         <div id='grid'>
-            <ItemListContainer greeting= "Lista de productos"/>
-            <ProductsList/>
+        <ItemListContainer greeting= "Lista de productos"/>
+        <Routes>
+        <Route path="/" element={<ProductsList/>}/>
+        <Route path="/procesadores" element={<ProductsFilter serch ="procesador"/>} />
+        <Route path="/mothers" element={<ProductsFilter serch ="mother"/>}/>
+        </Routes> 
         </div>
+        </BrowserRouter>
+        
+        
        
-        </>
+        </div>
 
     )
 
