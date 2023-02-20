@@ -8,7 +8,7 @@ export default function ProductDetailCard (product) {
             
                 <h1>{product.name}</h1>
                 <div>
-                    <img className="img" src={product.img} alt="img" />
+                    <img className="detail" src={product.img} alt="img" />
                 </div>
                 <h4>$ {product.price}</h4>
                 <div className="description">

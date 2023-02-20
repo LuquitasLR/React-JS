@@ -26,7 +26,7 @@ function App () {
         <Route path="/procesadores" element={<ProductsFilter serch ="procesador"/>} />
         <Route path="/mothers" element={<ProductsFilter serch ="mother"/>}/>
         {products.map((product) => (
-         <Route path={`/${product.id}`} element={<ProductDetailCard price={product.price} name={product.name} img={product.urlImg} detail={product.detail}/>}/>
+         <Route path={`/${product.id}`} element={<ProductDetailCard price={product.price} name={product.name} img={product.imgBig} detail={product.detail}/>}/>
         ))}
         </Routes> 
         </div>

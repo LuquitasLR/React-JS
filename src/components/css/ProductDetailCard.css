@@ -1,3 +1,4 @@
- div .detailCard {
-    
+div img.detail {
+    width: 500px;
+    border-radius: 10px;
 }
