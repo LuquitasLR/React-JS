@@ -209,4 +209,5 @@ p {
   grid-template-columns: 2fr 3fr;
   justify-items: stretch;
   align-items: start;
-  overflow: hidden; }
+  overflow: hidden;
+  min-height: 60rem; }

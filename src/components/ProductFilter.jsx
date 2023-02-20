@@ -8,7 +8,7 @@ export default function ProductsFilter({serch}) {
     return (
             <div>
         {selection.map((product) => (
-          <ProductCard price={product.price} name={product.name} img={product.urlImg}  />
+          <ProductCard id={product.id} price={product.price} name={product.name} img={product.urlImg}  />
         ))}
       </div>
     );
