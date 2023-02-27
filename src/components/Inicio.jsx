@@ -1,9 +1,9 @@
 import './css/Inicio.css'
 import banner1 from '../imagenes/banner1.png'
+import ItemListContainer from './ItemListContainer'
 const Inicio = ({title, intro,buy}) => {
 
 return (
-
 <div className='inicio'>    
     <div>
         <h1>{title}</h1>
@@ -18,7 +18,8 @@ return (
         <h3>{buy}</h3>
     </div>
 </div>
-    
+
+ 
 
 )
 
