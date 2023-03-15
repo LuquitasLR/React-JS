@@ -1,12 +1,11 @@
 #lista {
-    grid-area: category;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
     font-size: 25px;
     background-color: black;
+    width: 30%;
     
 }
 h2 {

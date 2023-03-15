@@ -9,12 +9,12 @@
 
 
 body {
-  width: 100%;
-  max-width: 1800px;
-  margin-left: 52px;
+  align-content: center;
+  max-width: 2200px;
+  width: 100vw;
   line-height: 1.5;
   min-width: 320px;
-  overflow-x: hidden;
+  overflow-x: hidden; 
   background-color: black;
 }
 
@@ -202,12 +202,13 @@ p {
   border-radius: 10px;
 
 }
+#conteiner {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
 
-#grid {
-  display: grid;
-  grid-template-areas: "category product product";
-  grid-template-columns: 2fr 3fr;
-  justify-items: stretch;
-  align-items: start;
-  overflow: hidden;
-  min-height: 70rem; }
+  
+  .banner {
+    width: 100vw;
+  }

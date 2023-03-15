@@ -1,6 +1,4 @@
 import './css/Inicio.css'
-import banner1 from '../imagenes/banner1.png'
-import ItemListContainer from './ItemListContainer'
 const Inicio = ({title, intro,buy}) => {
 
 return (
@@ -11,9 +9,6 @@ return (
     <div>
         <h2>{intro}</h2>
     </div>
-    <div>
-            <img src={banner1} alt="" />
-        </div>
     <div>
         <h3>{buy}</h3>
     </div>

@@ -3,7 +3,11 @@
     padding: 0.5vh;
   display: flex;
 flex-direction: row;
-justify-content: space-between;}
+justify-content: space-between;
+width: 100vw;
+max-width: 2200px;
+background-color: rgb(24, 24, 24);
+}
 .logo img {
   width: 180px;
 }
