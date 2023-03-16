@@ -3,9 +3,13 @@ import { useState,useEffect } from "react";
 import {collection,getDocs,} from "firebase/firestore"
 import {db} from "../firebaseConfig/firebase.js"
 import { Routes, Route } from 'react-router-dom';
+import { useContext } from 'react';
+import {CartContext} from "../context/CartContext.jsx"
 
 
 export default function ProductDetailCard () {
+
+    const {addProduct} = useContext(CartContext);
 
     const [products,setProducts] = useState([])
     
@@ -25,7 +29,7 @@ export default function ProductDetailCard () {
             <Routes>
          <Route path={`/${product.id}`} element={            
         
-        <div  className="card textCard productBox detailCard">         
+        <div  className="card textCard detailCard">         
             <h1>{product.name}</h1>
         <div>
             <img className="detail" src={product.urlImg} alt="img" />
@@ -36,7 +40,7 @@ export default function ProductDetailCard () {
                 {product.detail}
             </p>
         </div>
-        <div className="button" id="centrar"><a href="">Agregar al carrito</a></div>
+        <div className="button" id="centrar" onClick={()=>addProduct(product, 1)}><a >Agregar al carrito</a></div>
         </div>}/>
             </Routes>  
 

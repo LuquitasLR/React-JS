@@ -8,11 +8,12 @@ import ProductDetailCard from './components/ProductDetailCard.jsx'
 import Show from "./components/Show.jsx"
 import Banner1 from "./components/Banner1.jsx"
 import Cart from "./components/Cart.jsx"
+import {CartProvider} from './context/CartContext';
 
 function App () {
 
     return (
-
+        <CartProvider>
         <div>
         <BrowserRouter>
         <NavBar/>
@@ -31,7 +32,7 @@ function App () {
         </div>
         </BrowserRouter>
         </div>
-
+        </CartProvider>
         
 
     )

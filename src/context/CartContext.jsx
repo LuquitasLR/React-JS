@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-
+import Swal from 'sweetalert2'
 export const CartContext = createContext();
 
 export const CartProvider = ({children})=>{
@@ -11,6 +11,17 @@ export const CartProvider = ({children})=>{
     }
 
     const addProduct = (product, qty)=>{
+        const added =()=>{
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Agregado!',
+                showConfirmButton: false,
+                timer: 700,
+                width: 250
+              })
+
+        }
         const newList = [...productCartList];
         //verifico si el producto existe en el arreglo
         // si existe, actualice la propiedad quantity de ese producto
@@ -19,6 +30,7 @@ export const CartProvider = ({children})=>{
             newList[productIndex].quantity = newList[productIndex].quantity + qty;
             newList[productIndex].totalPrice = newList[productIndex].quantity * newList[productIndex].price;
             setProductCartList(newList)
+            added ()
         } else{
         //si no existe, agregue el producto al listado
             const newProduct={...product, quantity:qty, totalPrice: qty*product.price}
@@ -26,13 +38,26 @@ export const CartProvider = ({children})=>{
             const newList = [...productCartList];
             newList.push(newProduct);
             setProductCartList(newList);
+            added ()
         }
     }
 
     const removeProduct = (idProduct)=>{
+        const deleted =()=>{
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Producto eliminado!',
+                showConfirmButton: false,
+                timer: 700,
+                width: 250
+              })
+
+        }
         const copyArray = [...productCartList];
         const newArray = copyArray.filter(elm=>elm.id !== idProduct);
         setProductCartList(newArray);
+        deleted ()
     }
 
     const clearProductCartList=()=>{
