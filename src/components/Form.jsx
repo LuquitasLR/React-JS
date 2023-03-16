@@ -1,53 +1,78 @@
 import React from 'react';
 import "./css/Form.css"
-import { useContext } from 'react';
-import {Link} from "react-router-dom"
-import {CartContext} from "../context/CartContext.jsx"
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../firebaseConfig/firebase.js";
 
 
 export const Form =()=> {
 
+    const [nombre, setNombre] = useState("");
+    const [apellido, setApellido] = useState("");
+    const [direccion, setDireccion] = useState("");
+    const [piso, setPiso] = useState("");
+    const [departamento, setDepartamento] = useState("");
+    const [codigoPostal, setCodigoPostal] = useState(0);
+    const [mail, setMail] = useState("");
+
+  
+    const navigate = useNavigate();
+  
+    const ordersCollection = collection(db, "Orders");
+  
+    const order = async (e) => {
+      e.preventDefault();
+      await addDoc(ordersCollection, {
+        nombre: nombre,
+        apellido: apellido,
+        direccion: direccion,
+        piso: piso,
+        departamento: departamento,
+        codigoPostal: codigoPostal,
+        mail: mail,
+        
+      });
+      navigate("/")
+    }
+
     return(
        <div className='form'>
        <h2>Completa el formulario con tus datos para cargar la orden de entrega</h2>
-       <form>
+       <form onSubmit={order}>
   <label>
     Nombre:
-    <input type="text" name="name" />
+    <input value={nombre} onChange={(e)=>setNombre(e.target.value)} type="text" name="name" />
   </label>
   <label>
     Apellido:
-    <input type="text" name="name" />
+    <input value={apellido} onChange={(e)=>setApellido(e.target.value)} type="text" name="name" />
   </label>
   <label>
-    Direccion:
-    <input type="text" name="name" />
-  </label>
-  <label>
-    Direccion:
-    <input type="text" name="name" />
+    Dirección:
+    <input value={direccion} onChange={(e)=>setDireccion(e.target.value)} type="text" name="name" />
   </label>
   <label>
     Piso:
-    <input type="text" name="name" />
+    <input value={piso} onChange={(e)=>setPiso(e.target.value)} type="text" name="name" />
   </label>
   <label>
     Departamento:
-    <input type="text" name="name" />
+    <input value={departamento} onChange={(e)=>setDepartamento(e.target.value)} type="text" name="name" />
   </label>
   <label>
     Código postal:
-    <input type="text" name="name" />
+    <input value={codigoPostal} onChange={(e)=>setCodigoPostal(e.target.value)} type="number" name="name" />
   </label>
   <label>
     Ingresa tu mail:
-    <input type="text" name="name" />
+    <input value={mail} onChange={(e)=>setMail(e.target.value)} type="text" name="name" />
   </label>
   <label>
      Repetí tu mail:
-    <input type="text" name="name" />
+    <input  type="text" name="name" />
   </label>
-  <input className='submit' type="submit" value="Submit" />
+  <input  className='submit' type="submit" value="Submit" />
 </form>
 </div>
        
