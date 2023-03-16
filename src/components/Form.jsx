@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../firebaseConfig/firebase.js";
+import Swal from 'sweetalert2'
 
 
 export const Form =()=> {
@@ -18,6 +19,16 @@ export const Form =()=> {
 
   
     const navigate = useNavigate();
+    
+    const sendOrder =()=>{
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Orden enviada!',
+            showConfirmButton: false,
+            timer: 4000,
+            width: 550
+          })}
   
     const ordersCollection = collection(db, "Orders");
   
@@ -33,8 +44,11 @@ export const Form =()=> {
         mail: mail,
         
       });
+      sendOrder ()
       navigate("/")
+      
     }
+
 
     return(
        <div className='form'>
@@ -62,7 +76,7 @@ export const Form =()=> {
   </label>
   <label>
     Código postal:
-    <input value={codigoPostal} onChange={(e)=>setCodigoPostal(e.target.value)} type="number" name="name" />
+    <input value={codigoPostal} onChange={(e)=>setCodigoPostal(e.target.value)} type="number" />
   </label>
   <label>
     Ingresa tu mail:
