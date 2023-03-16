@@ -20,8 +20,8 @@ margin-left: 250px;
 width: 100px;
 }
 .button {
-    display: flex;
     justify-content: center;
+    margin: 10px;
 }
 .clear{
     position: absolute;
@@ -32,4 +32,28 @@ width: 100px;
     margin: 10px;
 
 
+}
+.payment{
+    display: flex;
+margin: 20px;
+}
+#pay {
+    position:absolute;
+    left: 200px;
+}
+h2{ display: flex;
+align-self: center;
+font-size: 25px;
+padding: 0 15px 15px 15px;
+
+}
+
+#payText {
+    display: flex;
+    position: absolute;
+    right: 200px;
+    background-color: rgb(31, 31, 31);
+    align-items: center;
+    align-content: center;
+    border-radius: 10px;
 }

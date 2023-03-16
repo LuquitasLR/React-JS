@@ -9,6 +9,7 @@ import Show from "./components/Show.jsx"
 import Banner1 from "./components/Banner1.jsx"
 import Cart from "./components/Cart.jsx"
 import {CartProvider} from './context/CartContext';
+import {Form} from "./components/Form.jsx";
 
 function App () {
 
@@ -27,6 +28,7 @@ function App () {
         <Route path="/procesadores" element={<><ItemListContainer/><ProductsFilter serch ="procesador"/></>} />
         <Route path="/mothers" element={<><ItemListContainer/><ProductsFilter serch ="mother"/></>}/>
         <Route path='/cart' element={<Cart />}/>
+        <Route path='/payment' element={<Form />}/>
         </Routes>
         <ProductDetailCard /> 
         </div>

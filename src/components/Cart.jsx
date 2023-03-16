@@ -1,5 +1,4 @@
 import "./css/Cart.css"
-import { useState,useEffect } from "react";
 import {ProductCard} from "./ProductCard.jsx"
 import React from 'react';
 import { useContext } from 'react';
@@ -8,7 +7,7 @@ import {CartContext} from "../context/CartContext.jsx"
 
 export default function Cart () {
     
-    const {productCartList, removeProduct, clearProductCartList} = useContext(CartContext);
+    const {productCartList, removeProduct, clearProductCartList,getTotalCost} = useContext(CartContext);
         
         return ( 
             <div className="cart">
@@ -25,9 +24,16 @@ export default function Cart () {
                         <div className="delete">
                         <div className="button" onClick={()=>removeProduct(product.id)}><h4>Eliminar</h4></div>
                         </div>
-            
                     </div>
                 ))}
+                </div>
+                <div className="payment buy">
+                    <Link to="/payment">
+                    <div id="pay" className="button "><h4>Finalizar compra</h4></div>
+                    </Link>
+                    
+                    <div id="payText"><h2 >Total carrito: ${getTotalCost()}</h2></div>
+                    
                 </div>
                 </>
                  :
