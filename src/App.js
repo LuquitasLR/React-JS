@@ -13,6 +13,12 @@ import {Form} from "./components/Form.jsx";
 
 function App () {
 
+
+       let productsCartList = JSON.parse( localStorage.getItem('productsCartList') ) || [];
+    
+       
+    
+
     return (
         <CartProvider>
         <div>

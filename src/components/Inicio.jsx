@@ -1,6 +1,7 @@
 import './css/Inicio.css'
 const Inicio = ({title, intro,buy}) => {
 
+
 return (
 <div className='inicio'>    
     <div>

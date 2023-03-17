@@ -9,6 +9,10 @@ export const CartProvider = ({children})=>{
         const elementExists = productCartList.some((elemento)=>elemento.id === id);
         return elementExists;
     }
+    function saveCart () {
+        localStorage.setItem("productsCartList", JSON.stringify(productCartList));
+    
+    }
 
     const addProduct = (product, qty)=>{
         const added =()=>{
@@ -31,6 +35,7 @@ export const CartProvider = ({children})=>{
             newList[productIndex].totalPrice = newList[productIndex].quantity * newList[productIndex].price;
             setProductCartList(newList)
             added ()
+            saveCart()
         } else{
         //si no existe, agregue el producto al listado
             const newProduct={...product, quantity:qty, totalPrice: qty*product.price}
@@ -39,6 +44,7 @@ export const CartProvider = ({children})=>{
             newList.push(newProduct);
             setProductCartList(newList);
             added ()
+            saveCart()
         }
     }
 
@@ -58,10 +64,12 @@ export const CartProvider = ({children})=>{
         const newArray = copyArray.filter(elm=>elm.id !== idProduct);
         setProductCartList(newArray);
         deleted ()
+        saveCart()
     }
 
     const clearProductCartList=()=>{
         setProductCartList([])
+        saveCart()
     }
 
     const getTotalProducts = ()=>{

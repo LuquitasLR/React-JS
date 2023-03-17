@@ -18,7 +18,7 @@ export const Form =()=> {
     const [direccion, setDireccion] = useState("");
     const [piso, setPiso] = useState("");
     const [departamento, setDepartamento] = useState("");
-    const [codigoPostal, setCodigoPostal] = useState(0);
+    const [codigoPostal, setCodigoPostal] = useState("");
     const [mail, setMail] = useState("");
 
 
@@ -60,10 +60,10 @@ export const Form =()=> {
     return(
        <div className='form'>
         <div>
-            <h1>Completa el formulario con tus datos para cargar la orden de entrega</h1>
+            <h1>Completa el formulario con tus datos para cargar la orden de entrega:</h1>
             <div className='detail'><h2>Detalle del pedido:</h2>
             {productCartList.map((product) =><><h4>{product.name}</h4><h4> Cantidad: {product.quantity}</h4> </> )}
-            <h2>Total ${getTotalCost()}</h2>
+            <h2>Total: ${getTotalCost()}</h2>
             </div>
             </div>
        <form onSubmit={order}>
@@ -96,7 +96,7 @@ export const Form =()=> {
     <input value={mail} onChange={(e)=>setMail(e.target.value)} type="text" name="name" />
   </label>
   <label>
-     Repetí tu mail:
+     Repetir mail:
     <input  type="text" name="name" />
   </label>
   <input  className='submit' type="submit" value="Submit" />
