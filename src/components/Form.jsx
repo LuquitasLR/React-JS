@@ -5,9 +5,13 @@ import { useNavigate } from "react-router-dom";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../firebaseConfig/firebase.js";
 import Swal from 'sweetalert2'
+import { useContext } from 'react';
+import {CartContext} from "../context/CartContext.jsx"
 
 
 export const Form =()=> {
+
+    const {productCartList, getTotalProducts, getTotalCost} = useContext(CartContext);
 
     const [nombre, setNombre] = useState("");
     const [apellido, setApellido] = useState("");
@@ -16,6 +20,7 @@ export const Form =()=> {
     const [departamento, setDepartamento] = useState("");
     const [codigoPostal, setCodigoPostal] = useState(0);
     const [mail, setMail] = useState("");
+
 
   
     const navigate = useNavigate();
@@ -42,6 +47,8 @@ export const Form =()=> {
         departamento: departamento,
         codigoPostal: codigoPostal,
         mail: mail,
+        products: (productCartList.map((product) => `${product.name}, cantidad: ${product.quantity}`)),
+        totalCost: getTotalCost(),
         
       });
       sendOrder ()
@@ -52,7 +59,13 @@ export const Form =()=> {
 
     return(
        <div className='form'>
-       <h2>Completa el formulario con tus datos para cargar la orden de entrega</h2>
+        <div>
+            <h1>Completa el formulario con tus datos para cargar la orden de entrega</h1>
+            <div className='detail'><h2>Detalle del pedido:</h2>
+            {productCartList.map((product) =><><h4>{product.name}</h4><h4> Cantidad: {product.quantity}</h4> </> )}
+            <h2>Total ${getTotalCost()}</h2>
+            </div>
+            </div>
        <form onSubmit={order}>
   <label>
     Nombre:

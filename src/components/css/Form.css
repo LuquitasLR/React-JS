@@ -41,3 +41,12 @@ div.form {
     
     justify-content: center;
 }
+
+.detail {
+  background-color: rgb(26, 26, 26);
+  border-radius: 10px;
+}
+
+ div.detail h4 {
+  margin: 5px 0px 5px 50px;
+}
