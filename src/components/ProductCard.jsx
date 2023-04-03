@@ -6,8 +6,8 @@ import {CartContext} from "../context/CartContext.jsx"
 
 export const ProductCard= ({product})=> {
     
-    const {addProduct} = useContext(CartContext);
-
+    const {addProduct, productCartList} = useContext(CartContext);
+    const productIndex = productCartList.findIndex(product.id);
 
 
     return (
@@ -19,7 +19,7 @@ export const ProductCard= ({product})=> {
                 <h4>$ {product.price}</h4>
                 <div className="button"  onClick={()=> addProduct(product, 1)}  ><a >Agregar al carrito</a>
                 </div> 
-                <h4>{product.quantity}</h4>           
+                <h4> {productCartList[productIndex].quantity==0? <></> :<>Cantidad: {productCartList[productIndex].quantity}</>} </h4>           
             </ul>
 
     )

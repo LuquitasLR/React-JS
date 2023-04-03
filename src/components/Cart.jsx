@@ -14,30 +14,31 @@ export default function Cart () {
                 <h1>Carrito</h1>
 
                 {
-                productCartList.lenght!=0 ?
-                <>
-                <div onClick={()=> clearProductCartList()} className="button clear"><h4>Vaciar carrito</h4></div>
-                <div className="cartCard">
-                {productCartList.map((product) => (
-                    <div>
-                        <ProductCard className="card" product={product} />
-                        <div className="delete">
-                        <div className="button" onClick={()=>removeProduct(product.id)}><h4>Eliminar</h4></div>
-                        </div>
-                    </div>
-                ))}
-                </div>
-                <div className="payment buy">
-                    <Link to="/payment">
-                    <div id="pay" className="button "><h4>Finalizar compra</h4></div>
-                    </Link>
-                    
-                    <div id="payText"><h2 >Total carrito: ${getTotalCost()}</h2></div>
-                    
-                </div>
-                </>
+                productCartList.lenght ==0?
+                <><h3>El carrito esta vacio...</h3></>
+                
                  :
-                <h3>El carrito esta vacio...</h3>
+                 <>
+                 <div onClick={()=> clearProductCartList()} className="button clear"><h4>Vaciar carrito</h4></div>
+                 <div className="cartCard">
+                 {productCartList.map((product) => (
+                     <div key={product.id}>
+                         <ProductCard  className="card" product={product} />
+                         <div className="delete">
+                         <div className="button" onClick={()=>removeProduct(product.id)}><h4>Eliminar</h4></div>
+                         </div>
+                     </div>
+                 ))}
+                 </div>
+                 <div className="payment buy">
+                     <Link to="/payment">
+                     <div id="pay" className="button "><h4>Finalizar compra</h4></div>
+                     </Link>
+                     
+                     <div id="payText"><h2 >Total carrito: ${getTotalCost()}</h2></div>
+                     
+                 </div>
+                 </>
                 }
             </div>
 

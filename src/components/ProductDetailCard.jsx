@@ -26,8 +26,8 @@ export default function ProductDetailCard () {
     
     return (
         (products.map((product) =>(
-            <Routes>
-         <Route path={`/${product.id}`} element={            
+            <Routes key={product.id}>
+         <Route  path={`/${product.id}`} element={            
         
         <div  className="card textCard detailCard">         
             <h1>{product.name}</h1>
